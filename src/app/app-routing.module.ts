@@ -6,6 +6,7 @@ import { CryptoChipsListComponent } from './components/crypto-chips-list/crypto-
 import { PublicHolidaysSelectComponent } from './components/public-holidays-select/public-holidays-select.component';
 import { CategoriesCheckboxListComponent } from './components/categories-checkbox-list/categories-checkbox-list.component';
 import { CategoriesMenuComponent } from './components/categories-menu/categories-menu.component';
+import { ProductTableComponent } from './components/product-table/product-table.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoriesListComponentModule } from './components/categories-list/categories-list.component-module';
@@ -16,6 +17,7 @@ import { PublicHolidaysSelectComponentModule } from './components/public-holiday
 import { PublicHolidaysServiceModule } from './services/public-holidays.service-module';
 import { CategoriesCheckboxListComponentModule } from './components/categories-checkbox-list/categories-checkbox-list.component-module';
 import { CategoriesMenuComponentModule } from './components/categories-menu/categories-menu.component-module';
+import { ProductTableComponentModule } from './components/product-table/product-table.component-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([
@@ -24,13 +26,15 @@ import { CategoriesMenuComponentModule } from './components/categories-menu/cate
     { path: 'crypto', component: CryptoChipsListComponent },
     { path: 'public-holidays', component: PublicHolidaysSelectComponent },
     { path: 'checkbox-categories', component: CategoriesCheckboxListComponent },
-    { path: 'categories-menu', component: CategoriesMenuComponent }
+    { path: 'categories-menu', component: CategoriesMenuComponent },
+    { path: 'product-search', component: ProductTableComponent }
   ]), ProductListComponentModule, ProductsServiceModule,
     CategoriesListComponentModule, CategoriesServiceModule,
     CryptoChipsListComponentModule, CryptoChipsServiceModule,
     PublicHolidaysSelectComponentModule, PublicHolidaysServiceModule,
     CategoriesCheckboxListComponentModule,
-    CategoriesMenuComponentModule],
+    CategoriesMenuComponentModule,
+    ProductTableComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
