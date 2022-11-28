@@ -1,5 +1,8 @@
+<h1>Product form</h1>
+
 <form [formGroup]="productForm" (ngSubmit)="onProductFormSubmitted(productForm)">
   <div>
+
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
       <input matInput type="text" placeholder="Title" formControlName="title" required>
@@ -23,7 +26,10 @@
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Category</mat-label>
-      <input matInput type="text" placeholder="Category" formControlName="category" required>
+      <mat-select type="list" placeholder="Category" formControlName="category" required>
+        <mat-option *ngFor="let category of list$ | async" [value]="category" > {{category}}
+        </mat-option>
+      </mat-select>
       <mat-error *ngIf="productForm.get('category')!.invalid">category is invalid</mat-error>
     </mat-form-field>
   </div>
@@ -33,6 +39,7 @@
       <input matInput type="text" placeholder="Image" formControlName="image" required>
       <mat-error *ngIf="productForm.get('image')!.invalid">image is invalid</mat-error>
     </mat-form-field>
+
   </div>
   <div>
     <button type="submit" mat-raised-button color="primary">Submit</button>
