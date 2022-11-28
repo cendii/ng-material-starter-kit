@@ -27,7 +27,7 @@ export class ProductFormComponent {
       category: productForm.get('category')?.value,
       price: productForm.get('price')?.value,
       description: productForm.get('description')?.value,
-      image: productForm.get('image')?.value,
+      image: productForm.get('image')?.value
     }).subscribe();
   }
 }
